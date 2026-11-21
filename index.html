@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF GLORY</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#070b12;color:white;font-family:Arial,sans-serif}
+header{padding:18px;background:#101824;border-bottom:1px solid #168cff;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:bold;color:#269cff}
+.live{color:#00e58b;font-size:12px}
+main{padding:18px;max-width:850px;margin:auto}
+.card{background:#111a27;border:1px solid #24354b;border-radius:18px;padding:20px;margin:18px 0;box-shadow:0 0 18px #087bff20}
+h2{color:#36a5ff}
+button{border:0;border-radius:10px;padding:13px 20px;background:#168cff;color:white;font-weight:bold;cursor:pointer}
+button:active{opacity:.8}
+.packages{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.package{background:#0b1420;border:1px solid #268fff;border-radius:14px;padding:20px;text-align:center}
+.price{font-size:26px;color:#ffad32;font-weight:bold;margin:12px}
+input,select{width:100%;padding:14px;background:#080e17;border:1px solid #34475e;color:white;border-radius:10px;margin:10px 0}
+nav{position:fixed;bottom:0;left:0;right:0;background:#101824;display:flex;justify-content:space-around;padding:15px;border-top:1px solid #168cff}
+nav button{background:transparent;color:#80baff;padding:8px}
+footer{height:85px}
+.small{color:#91a0b3;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">⚡ FF GLORY</div>
+<div class="live">● LIVE</div>
+</header>
+
+<main>
+<div class="card">
+<h1>Welcome to FF GLORY</h1>
+<p>Push Your Guild to Top Ranks</p>
+<p class="small">Your Guild Glory Dashboard</p>
+<button onclick="show('account')">Create Account / Login</button>
+</div>
+
+<section id="home">
+<div class="card">
+<h2>Buy Credits</h2>
+<div class="packages">
+<div class="package">
+<h3>⭐ SPECIAL CREDIT</h3>
+<div class="price">₹60</div>
+<button onclick="payment(60)">Buy Now</button>
+</div>
+<div class="package">
+<h3>⚡ BASIC CREDIT</h3>
+<div class="price">₹95</div>
+<button onclick="payment(95)">Buy Now</button>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Launch Bot</h2>
+<input placeholder="Enter your Guild ID">
+<select>
+<option>India</option>
+<option>Bangladesh</option>
+<option>Pakistan</option>
+<option>Middle East</option>
+<option>Europe</option>
+<option>North America</option>
+<option>Indonesia</option>
+<option>Russia</option>
+<option>Singapore</option>
+<option>Thailand</option>
+</select>
+<button onclick="alert('Please complete account and payment setup first.')">Launch Bot</button>
+</div>
+
+<div class="card">
+<h2>My Active Groups</h2>
+<p>Active groups will appear here.</p>
+</div>
+
+<div class="card">
+<h2>Live Purchases</h2>
+<p>1,000+ DEMO</p>
+<p class="small">SIMULATED PURCHASES — NOT REAL TRANSACTIONS</p>
+<div id="demo">Demo User • ₹60 • Demo Purchase</div>
+</div>
+</section>
+
+<section id="history" style="display:none">
+<div class="card">
+<h2>Transaction History</h2>
+<p>Your payment records will appear here.</p>
+</div>
+</section>
+
+<section id="contact" style="display:none">
+<div class="card">
+<h2>Contact Support</h2>
+<p>WhatsApp and Telegram support details will be added here.</p>
+</div>
+</section>
+
+<section id="account" style="display:none">
+<div class="card">
+<h2>Create Account / Login</h2>
+<input type="email" placeholder="Email">
+<input placeholder="Username">
+<input type="password" placeholder="Password">
+<button onclick="alert('Account backend setup required.')">Continue</button>
+</div>
+</section>
+<footer></footer>
+</main>
+
+<nav>
+<button onclick="show('history')">▤ History</button>
+<button onclick="show('home')">⌂ Home</button>
+<button onclick="show('contact')">☏ Contact</button>
+</nav>
+
+<script>
+function show(page){
+['home','history','contact','account'].forEach(id=>{
+document.getElementById(id).style.display=id===page?'block':'none';
+});
+window.scrollTo(0,0);
+}
+function payment(amount){
+alert('Selected amount: ₹'+amount+'. Secure payment gateway setup is required before accepting payments.');
+}
+</script>
+</body>
+</html>
